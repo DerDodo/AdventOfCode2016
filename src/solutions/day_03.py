@@ -39,3 +39,10 @@ def day_03_2() -> int:
 if __name__ == "__main__":
     print(f"Possible triangles (1): {day_03_1()}")
     print(f"Possible triangles (2): {day_03_2()}")
+
+
+def test_day_03():
+    assert is_triangle_possible(3, 3, 3) is True
+    assert is_triangle_possible(5, 10, 25) is False
+    assert is_triangle_possible(5, 10, 15) is False
+    assert is_triangle_possible(6, 10, 15) is True

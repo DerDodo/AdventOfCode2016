@@ -44,3 +44,10 @@ def day_01_2(text: str) -> int:
 if __name__ == "__main__":
     print(f"Distance (1): {day_01_1(read_input_file(1)[0])}")
     print(f"Distance (2): {day_01_2(read_input_file(1)[0])}")
+
+
+def test_day_01():
+    assert day_01_1("R2, L3") == 5
+    assert day_01_1("R2, R2, R2") == 2
+    assert day_01_1("R5, L5, R5, R3") == 12
+    assert day_01_2("R8, R4, R4, R8") == 4

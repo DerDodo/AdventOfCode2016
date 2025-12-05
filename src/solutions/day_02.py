@@ -58,3 +58,8 @@ def day_02_2() -> str:
 if __name__ == "__main__":
     print(f"Code (1): {day_02_1()}")
     print(f"Code (2): {day_02_2()}")
+
+
+def test_day_02():
+    assert day_02_1() == "1985"
+    assert day_02_2() == "5DB3"

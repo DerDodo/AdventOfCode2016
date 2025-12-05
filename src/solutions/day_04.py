@@ -58,3 +58,7 @@ def day_04_2() -> int:
 if __name__ == "__main__":
     print(f"Sum sectors: {day_04_1()}")
     print(f"North pole objects: {day_04_2()}")
+
+
+def test_day_04():
+    assert day_04_1() == 1514

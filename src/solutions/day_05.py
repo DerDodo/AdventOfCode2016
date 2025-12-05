@@ -32,3 +32,8 @@ def day_05_2(key: str, password_length: int) -> str:
 if __name__ == "__main__":
     print(f"Password (1): {day_05_1('ugkcyxxp', 8)}")
     print(f"Password (2): {day_05_2('ugkcyxxp', 8)}")
+
+
+def test_day_05():
+    assert day_05_1("abc", 3) == "18f"
+    assert day_05_2("abc", 2) == "05"
