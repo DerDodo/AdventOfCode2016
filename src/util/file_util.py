@@ -11,7 +11,12 @@ def read_input_file(level_id: int, strip: bool = True) -> List[str]:
 
 
 def read_input_file_id(file_id: str, strip: bool = True) -> List[str]:
-    input_file = open(f"../../input-files/day-{file_id}.txt", "r")
+    if "pytest" in sys.modules:
+        folder_prefix = ""
+    else:
+        folder_prefix = "../../"
+
+    input_file = open(f"{folder_prefix}input-files/day-{file_id}.txt", "r")
     lines = input_file.readlines()
     if strip:
         lines = [line.strip() for line in lines]
