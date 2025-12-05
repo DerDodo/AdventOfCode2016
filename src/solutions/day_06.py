@@ -24,7 +24,7 @@ def day_06() -> tuple[str, str]:
 
 
 if __name__ == "__main__":
-    print(f"Password (1): {day_06()}")
+    print(f"Code words: {day_06()}")
 
 
 def test_day_06():
