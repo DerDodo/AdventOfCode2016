@@ -1,5 +1,6 @@
 from typing import Dict
 
+from run_util import RunTimer
 from src.util.file_util import read_input_file
 
 
@@ -56,8 +57,10 @@ def day_04_2() -> int:
 
 
 if __name__ == "__main__":
+    timer = RunTimer()
     print(f"Sum sectors: {day_04_1()}")
     print(f"North pole objects: {day_04_2()}")
+    timer.print()
 
 
 def test_day_04():

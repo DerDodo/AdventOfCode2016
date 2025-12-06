@@ -1,4 +1,5 @@
 from file_util import read_input_file
+from run_util import RunTimer
 
 
 def read_input() -> list[list[str]]:
@@ -24,7 +25,9 @@ def day_06() -> tuple[str, str]:
 
 
 if __name__ == "__main__":
+    timer = RunTimer()
     print(f"Code words: {day_06()}")
+    timer.print()
 
 
 def test_day_06():

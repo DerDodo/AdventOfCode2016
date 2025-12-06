@@ -2,6 +2,7 @@ from enum import Enum
 
 from file_util import read_input_file
 from math_util import Area, Position
+from run_util import RunTimer
 
 
 def command_rect(screen: Area, width: int, height: int):
@@ -67,7 +68,9 @@ def day_08(width: int, height: int) -> int:
 
 
 if __name__ == "__main__":
+    timer = RunTimer()
     print(f"Num active pixels: {day_08(50, 6)}")
+    timer.print()
 
 
 def test_day_08():

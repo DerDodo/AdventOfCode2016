@@ -1,3 +1,4 @@
+from run_util import RunTimer
 from src.util.direction_util import Coordinate, Direction
 from src.util.file_util import read_input_file
 
@@ -42,8 +43,10 @@ def day_01_2(text: str) -> int:
 
 
 if __name__ == "__main__":
+    timer = RunTimer()
     print(f"Distance (1): {day_01_1(read_input_file(1)[0])}")
     print(f"Distance (2): {day_01_2(read_input_file(1)[0])}")
+    timer.print()
 
 
 def test_day_01():

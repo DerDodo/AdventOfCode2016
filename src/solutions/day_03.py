@@ -1,5 +1,6 @@
 from typing import List
 
+from run_util import RunTimer
 from src.util.file_util import read_input_file
 
 
@@ -37,8 +38,10 @@ def day_03_2() -> int:
 
 
 if __name__ == "__main__":
+    timer = RunTimer()
     print(f"Possible triangles (1): {day_03_1()}")
     print(f"Possible triangles (2): {day_03_2()}")
+    timer.print()
 
 
 def test_day_03():

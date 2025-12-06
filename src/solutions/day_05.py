@@ -1,5 +1,7 @@
 import hashlib
 
+from run_util import RunTimer
+
 
 def day_05_1(key: str, password_length: int) -> str:
     password = ""
@@ -30,8 +32,10 @@ def day_05_2(key: str, password_length: int) -> str:
 
 
 if __name__ == "__main__":
+    timer = RunTimer()
     print(f"Password (1): {day_05_1('ugkcyxxp', 8)}")
     print(f"Password (2): {day_05_2('ugkcyxxp', 8)}")
+    timer.print()
 
 
 def test_day_05():

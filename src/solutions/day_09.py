@@ -1,4 +1,5 @@
 from file_util import read_input_file
+from run_util import RunTimer
 
 
 def read_input() -> str:
@@ -45,7 +46,9 @@ def day_09() -> tuple[int, int]:
 
 
 if __name__ == "__main__":
+    timer = RunTimer()
     print(f"Decompressed length: {day_09()}")
+    timer.print()
 
 
 def test_day_09():

@@ -1,3 +1,4 @@
+from run_util import RunTimer
 from src.util.file_util import read_input_file
 
 
@@ -56,8 +57,10 @@ def day_02_2() -> str:
 
 
 if __name__ == "__main__":
+    timer = RunTimer()
     print(f"Code (1): {day_02_1()}")
     print(f"Code (2): {day_02_2()}")
+    timer.print()
 
 
 def test_day_02():

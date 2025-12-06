@@ -1,4 +1,5 @@
 from file_util import read_input_file
+from run_util import RunTimer
 
 
 def read_input() -> list[str]:
@@ -53,7 +54,9 @@ def day_07() -> tuple[int, int]:
 
 
 if __name__ == "__main__":
+    timer = RunTimer()
     print(f"Num ips: {day_07()}")
+    timer.print()
 
 
 def test_day_07():
