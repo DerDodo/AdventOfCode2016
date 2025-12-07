@@ -58,20 +58,46 @@ def read_input() -> list[tuple[Command, int, int]]:
     return commands
 
 
-def day_08(width: int, height: int) -> int:
+def read_font() -> dict[str, list[str]]:
+    input_file = open("day_08_font.txt", "r")
+    lines = input_file.readlines()
+    font = {}
+    for col in range(0, len(lines[-1]), 5):
+        font[lines[0][col]] = [lines[i][col:col+5] for i in range(1, len(lines))]
+    return font
+
+
+def match_letter(screen: Area, start: int, font: dict[str, list[str]]) -> str:
+    for letter in font.items():
+        matched = True
+        for line_i in range(len(letter[1])):
+            for col in range(5):
+                if letter[1][line_i][col] != screen.field[line_i][start+col]:
+                    matched = False
+                    break
+        if matched:
+            return letter[0]
+    raise ValueError("Couldn't match letter!")
+
+
+def day_08(width: int, height: int, check_text: bool) -> tuple[int, str]:
     screen = Area.from_bounds_and_value(Position(width, height), ".")
     commands = read_input()
     for command in commands:
         command[0].execute(screen, command[1], command[2])
-    print(screen)
-    return screen.count("#")
+    text = ""
+    if check_text:
+        font = read_font()
+        for col in range(0, screen.get_width(), 5):
+            text += match_letter(screen, col, font)
+    return screen.count("#"), text
 
 
 if __name__ == "__main__":
     timer = RunTimer()
-    print(f"Num active pixels: {day_08(50, 6)}")
+    print(f"Num active pixels: {day_08(50, 6, True)}")
     timer.print()
 
 
 def test_day_08():
-    assert day_08(7, 3) == 9
+    assert day_08(7, 3, False) == (9, "")
