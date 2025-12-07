@@ -22,7 +22,7 @@ def day_01_1(text: str) -> int:
 def day_01_2(text: str) -> int:
     position = Coordinate(0, 0)
     direction = Direction.North
-    position_cache = set(position.to_tuple())
+    position_cache: set[tuple[int, int]] = {position.to_tuple()}
 
     commands = text.split(", ")
     for command in commands:

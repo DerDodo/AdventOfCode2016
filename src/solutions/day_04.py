@@ -43,7 +43,7 @@ class Room:
 def day_04_1() -> int:
     lines = read_input_file(4)
     rooms = list(map(Room, lines))
-    return sum(map(lambda r: r.sector_id, filter(lambda r: r.is_real(), rooms)))
+    return sum([r.sector_id for r in filter(lambda r: r.is_real(), rooms)])
 
 
 def day_04_2() -> int:

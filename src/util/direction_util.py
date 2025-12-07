@@ -1,5 +1,4 @@
 from enum import Enum
-from typing import Tuple
 
 
 class Coordinate:
@@ -37,7 +36,7 @@ class Coordinate:
     def manhattan_length(self) -> int:
         return abs(self.x) + abs(self.y)
 
-    def to_tuple(self) -> Tuple[int, int]:
+    def to_tuple(self) -> tuple[int, int]:
         return self.x, self.y
 
 
