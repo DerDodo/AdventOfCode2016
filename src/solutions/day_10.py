@@ -86,7 +86,7 @@ def get_acting_bots(bots: dict[int, Bot]) -> set[int]:
     return acting_bots
 
 
-def day_010(chip1: int, chip2: int, interest_outputs: list[int]) -> tuple[int, int]:
+def day_10(chip1: int, chip2: int, interest_outputs: list[int]) -> tuple[int, int]:
     low_interest = min(chip1, chip2)
     high_interest = max(chip1, chip2)
     bot_interest = -1
@@ -111,9 +111,9 @@ def day_010(chip1: int, chip2: int, interest_outputs: list[int]) -> tuple[int, i
 
 if __name__ == "__main__":
     timer = RunTimer()
-    print(f"Target bot: {day_010(61, 17, [0, 1, 2])}")
+    print(f"Target bot: {day_10(61, 17, [0, 1, 2])}")
     timer.print()
 
 
-def test_day_010():
-    assert day_010(2, 5, [0, 1]) == (2, 10)
+def test_day_10():
+    assert day_10(2, 5, [0, 1]) == (2, 10)
