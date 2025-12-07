@@ -10,25 +10,25 @@ class Coordinate:
         self.y = y
 
     def __add__(self, other):
-        if type(other) == int:
+        if isinstance(other, int):
             return Coordinate(self.x + other, self.y + other)
-        elif type(other) == Coordinate:
+        elif isinstance(other, Coordinate):
             return Coordinate(self.x + other.x, self.y + other.y)
         else:
             return NotImplemented(f"Cannot add {type(other)} to Coordinate")
 
     def __sub__(self, other):
-        if type(other) == int:
+        if isinstance(other, int):
             return Coordinate(self.x - other, self.y - other)
-        elif type(other) == Coordinate:
+        elif isinstance(other, Coordinate):
             return Coordinate(self.x - other.x, self.y - other.y)
         else:
             return NotImplemented(f"Cannot subtract {type(other)} from Coordinate")
 
     def __mul__(self, other):
-        if type(other) == int:
+        if isinstance(other, int):
             return Coordinate(self.x * other, self.y * other)
-        elif type(other) == Coordinate:
+        elif isinstance(other, Coordinate):
             return Coordinate(self.x * other.x, self.y * other.y)
         else:
             return NotImplemented(f"Cannot multiply {type(other)} from Coordinate")
