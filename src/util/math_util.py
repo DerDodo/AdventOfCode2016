@@ -433,7 +433,7 @@ class Area:
             if self.safe_check(position + Direction.West, old_value):
                 fields_to_fill.add(position + Direction.West)
 
-    def get_value_set(self) -> set:
+    def get_value_set(self):
         result = set()
         for position in self:
             result.add(self[position])
