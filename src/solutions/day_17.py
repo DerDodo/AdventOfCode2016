@@ -29,7 +29,7 @@ def calc_next_moves(passcode: str, path: str, position: Position) -> set[Directi
     return directions
 
 
-def day_17(passcode: str) -> tuple[str, int]:
+def day_17(passcode: str) -> tuple[str | None, int]:
     paths: set[tuple[str, Position]] = {("", Position(0, 0))}
     shortest_path = None
     longest_path = 0
